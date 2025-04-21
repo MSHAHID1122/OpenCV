@@ -19,7 +19,34 @@ def convert_img(image):
     cv2.imshow("window",gray_img)
     cv2.waitKey(0)
 
-    
+
+def rgb_into_rg(image):
+    img = cv2.imread(image)
+    img[:,:,0]=0
+    cv2.imshow("window",img)
+    cv2.waitKey(0)
+
+def rbg_into_rb(image):
+    img = cv2.imread(image)
+    img[:,:,1]=0
+    cv2.imshow("window",img)
+    cv2.waitKey(0)   
+def rbg_into_bg(image):
+    img = cv2.imread(image)
+    img[:,:,2]=0 
+    cv2.imshow("window",img)
+    cv2.waitKey(0)    
+
+
+def resize_img(image,p1,p2):
+    img =cv2.imread(image)
+    myimg= cv2.resize(img,(p1,p2))
+    cv2.imshow("window",myimg)
+    cv2.waitKey(0)
+
 image = r"nature.jpg"
-read_image(image)
-convert_img(image)
+# read_image(image)
+# convert_img(image)
+# rbg_into_rb(image)
+# rbg_into_bg(image)
+resize_img(image,40,40)
