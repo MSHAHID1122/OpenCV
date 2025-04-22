@@ -44,9 +44,25 @@ def resize_img(image,p1,p2):
     cv2.imshow("window",myimg)
     cv2.waitKey(0)
 
+
+def flip_img(image):
+    img = cv2.imread(image)
+    #Horizontal  flip
+    flip_img = cv2.flip(img,1)
+    cv2.imshow("window",flip_img)
+    cv2.waitKey(0)
+    #Horizontal  flip
+
+    img2 = cv2.flip(img,0)
+    cv2.imshow("window",img2)
+    cv2.waitKey(0)
+    #horizontal flip
+    
+
 image = r"nature.jpg"
 # read_image(image)
 # convert_img(image)
 # rbg_into_rb(image)
 # rbg_into_bg(image)
-resize_img(image,40,40)
+# resize_img(image,40,40)
+flip_img(image)
