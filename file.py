@@ -78,6 +78,12 @@ def draw_circle(img,center,color,radius,thickness):
     cv2.imshow("window",circle)
     cv2.waitKey(0)
 
+def interText(img,text,org,color,thickness,fontface,fontsize):
+    i = cv2.imread(img)
+    
+    img1 = cv2.putText(i, text, org, fontface, fontsize, color, thickness)
+    cv2.imshow("window",img1)
+    cv2.waitKey(0)
 
 image = r"nature.jpg"
 # read_image(image)
@@ -88,4 +94,6 @@ image = r"nature.jpg"
 # flip_img(image)
 # crop_img(image)
 # draw_rectangle(image,(100,100),(300,300),(255,0,0),3)
-draw_circle(image,(400,400),(0,255,0),50,3)
+# draw_circle(image,(400,400),(0,255,0),50,3)
+font = cv2.LINE_AA
+interText(img=image,text = "hello",org = (300,300),color = (255,255,0),thickness=2,fontface=font,fontsize=1)
