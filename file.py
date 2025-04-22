@@ -64,9 +64,16 @@ def crop_img(image):
     cv2.imshow("window",crop)
     cv2.waitKey(0)
 
-def save_img(img):
-    cv2.imwrite("fruts.png",img)
+def save_img(img,name:str):
+    cv2.imwrite(name,img)
     
+def draw_rectangle(img,p1,p2,color,thickness):
+    i = cv2.imread(img)
+    r=cv2.rectangle(i,p1,p2,color,thickness)
+    cv2.imshow("window",r)
+    cv2.waitKey(0)
+
+
 
 image = r"nature.jpg"
 # read_image(image)
@@ -74,5 +81,6 @@ image = r"nature.jpg"
 # rbg_into_rb(image)
 # rbg_into_bg(image)
 # resize_img(image,40,40)
-flip_img(image)
-crop_img(image)
+# flip_img(image)
+# crop_img(image)
+draw_rectangle(image,(100,100),(300,300),(255,0,0),3)
