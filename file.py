@@ -64,6 +64,8 @@ def crop_img(image):
     cv2.imshow("window",crop)
     cv2.waitKey(0)
 
+def save_img(img):
+    cv2.imwrite("fruts.png",img)
     
 
 image = r"nature.jpg"
