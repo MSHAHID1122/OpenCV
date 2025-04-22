@@ -57,6 +57,13 @@ def flip_img(image):
     cv2.imshow("window",img2)
     cv2.waitKey(0)
     #horizontal flip
+
+def crop_img(image):
+    img = cv2.imread(image)
+    crop = img[100:400,100:300]
+    cv2.imshow("window",crop)
+    cv2.waitKey(0)
+
     
 
 image = r"nature.jpg"
@@ -66,3 +73,4 @@ image = r"nature.jpg"
 # rbg_into_bg(image)
 # resize_img(image,40,40)
 flip_img(image)
+crop_img(image)
