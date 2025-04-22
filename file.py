@@ -72,7 +72,11 @@ def draw_rectangle(img,p1,p2,color,thickness):
     r=cv2.rectangle(i,p1,p2,color,thickness)
     cv2.imshow("window",r)
     cv2.waitKey(0)
-
+def draw_circle(img,center,color,radius,thickness):
+    i = cv2.imread(img)
+    circle = cv2.circle(i,center,radius,color,thickness)
+    cv2.imshow("window",circle)
+    cv2.waitKey(0)
 
 
 image = r"nature.jpg"
@@ -83,4 +87,5 @@ image = r"nature.jpg"
 # resize_img(image,40,40)
 # flip_img(image)
 # crop_img(image)
-draw_rectangle(image,(100,100),(300,300),(255,0,0),3)
+# draw_rectangle(image,(100,100),(300,300),(255,0,0),3)
+draw_circle(image,(400,400),(0,255,0),50,3)
