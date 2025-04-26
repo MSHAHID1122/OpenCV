@@ -85,13 +85,18 @@ def interText(img,text,org,color,thickness,fontface,fontsize):
     cv2.imshow("window",img1)
     cv2.waitKey(0)
 
+def draw_circle_onclick(event,x,y,flags,params):
+    if(event==4):
+        print('MOUSE CLICKED')
 
+cv2.namedWindow(winname="window")
+cv2.setMouseCallback("window",draw_circle_onclick)
 def event_create():
     while(True):
         cv2.imshow("window",img)
         if cv2.waitKey(1) & 0xFF == ord('x'):
             break
-   cv2.destroyAllWindows()     
+    cv2.destroyAllWindows()     
 
 
 
