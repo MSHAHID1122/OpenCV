@@ -1,6 +1,7 @@
 import cv2
 
 
+image = r"nature.jpg"
 # Reading the  image and printing it onto the screen
 def read_image(image):
     
@@ -87,12 +88,14 @@ def interText(img,text,org,color,thickness,fontface,fontsize):
 
 def draw_circle_onclick(event,x,y,flags,params):
     if(event==4):
-        img = r"nature.jpg"
-        draw_circle(img,(x,y),(255,0,0),50,-1)
+        
+        draw_circle(image,(x,y),(255,0,0),50,-1)
 
-cv2.namedWindow(winname="window")
-cv2.setMouseCallback("window",draw_circle_onclick)
-def event_create():
+
+def event_create(img):
+    cv2.namedWindow(winname="window")
+    cv2.setMouseCallback("window",draw_circle_onclick)
+    img = cv2.imread(image)
     while(True):
         cv2.imshow("window",img)
         if cv2.waitKey(1) & 0xFF == ord('x'):
@@ -102,7 +105,6 @@ def event_create():
 
 
 
-image = r"nature.jpg"
 # read_image(image)
 # convert_img(image)
 # rbg_into_rb(image)
@@ -114,3 +116,4 @@ image = r"nature.jpg"
 # draw_circle(image,(400,400),(0,255,0),50,3)
 font = cv2.LINE_AA
 interText(img=image,text = "hello",org = (300,300),color = (255,255,0),thickness=2,fontface=font,fontsize=1)
+event_create(image)
