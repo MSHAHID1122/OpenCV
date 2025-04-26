@@ -85,6 +85,16 @@ def interText(img,text,org,color,thickness,fontface,fontsize):
     cv2.imshow("window",img1)
     cv2.waitKey(0)
 
+
+def event_create():
+    while(True):
+        cv2.imshow("window",img)
+        if cv2.waitKey(1) & 0xFF == ord('x'):
+            break
+        
+
+
+
 image = r"nature.jpg"
 # read_image(image)
 # convert_img(image)
