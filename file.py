@@ -72,7 +72,7 @@ def draw_rectangle(img,p1,p2,color,thickness):
     r=cv2.rectangle(i,p1,p2,color,thickness)
     cv2.imshow("window",r)
     cv2.waitKey(0)
-def draw_circle(img,center,color,radius,thickness):
+def draw_circle(img,center,color,radius:int,thickness):
     i = cv2.imread(img)
     circle = cv2.circle(i,center,radius,color,thickness)
     cv2.imshow("window",circle)
@@ -87,7 +87,8 @@ def interText(img,text,org,color,thickness,fontface,fontsize):
 
 def draw_circle_onclick(event,x,y,flags,params):
     if(event==4):
-        print('MOUSE CLICKED')
+        img = r"nature.jpg"
+        draw_circle(img,(x,y),(255,0,0),50,-1)
 
 cv2.namedWindow(winname="window")
 cv2.setMouseCallback("window",draw_circle_onclick)
